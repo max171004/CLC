@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Bases - Clash Of Max</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Minuteur <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="village_principal.html">Village Principal</a></li>
+							<li class="active"><a href="village_ouvrier.html">Village Ouvrier</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Aide <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="sidebar-left.html">Bases</a></li>
+							<li class="active"><a href="sidebar-right.html">Compos</a></li>
+						</ul>
+					</li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.html">Home</a></li>
+			<li class="active">Minuteur</li>
+		</ol>
+
+		<div class="row">
+			<!-- Main content -->
+			<article class="col-sm-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Minuteur avec Alerte Email</h1>
+				</header>
+		
+				<!-- Timer and Category Selection Form -->
+				<form id="timer-form">
+					<div class="form-group">
+						<label for="main-category">Choisissez une catégorie:</label>
+						<select id="main-category" class="form-control" required>
+							<option value="" disabled selected>Choisissez une catégorie</option>
+							<option value="heroes">Héros</option>
+							<option value="defense">Défense</option>
+							<option value="structures">Structures</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="sub-category">Choisissez une structure ou un héros:</label>
+						<div id="sub-category-selection" class="d-flex flex-wrap">
+							<!-- Images will be dynamically inserted here based on the chosen category -->
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="time-duration">Durée du minuteur:</label>
+						<div class="d-flex">
+							<input type="number" class="form-control mr-2" id="time-days" placeholder="Jours" min="0" max="365" required>
+							<input type="number" class="form-control mr-2" id="time-hours" placeholder="Heures" min="0" max="23" required>
+							<input type="number" class="form-control mr-2" id="time-minutes" placeholder="Minutes" min="0" max="59" required>
+							<input type="number" class="form-control" id="time-seconds" placeholder="Secondes" min="0" max="59" required>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="email">Adresse Email:</label>
+						<input type="email" class="form-control" id="email" placeholder="Votre email" required>
+					</div>
+					
+					<button type="submit" class="btn btn-primary">Démarrer le minuteur</button>
+				</form>
+				
+				<!-- Display Timer Countdown -->
+				<div id="countdown" style="margin-top: 20px; font-size: 24px;"></div>
+			</article>
+			<!-- /Main content -->
+			
+			<!-- Sidebar -->
+			<aside class="col-sm-4 sidebar sidebar-right">
+				<div class="widget">
+					<h4>Comment ça marche?</h4>
+					<p>Sélectionnez une catégorie en cliquant sur une image, définissez un minuteur (jours, heures, minutes, secondes), et recevez un email une fois que le temps est écoulé pour vous rappeler de passer à l'action!</p>
+				</div>
+			</aside>
+			<!-- /Sidebar -->
+		</div>
+		</div> <!-- /container -->
+		
+		<!-- JavaScript to Handle Timer Logic -->
+		<script>
+		document.getElementById('timer-form').addEventListener('submit', function(event) {
+			event.preventDefault();
+		
+			// Get the input values
+			var days = parseInt(document.getElementById('time-days').value) || 0;
+			var hours = parseInt(document.getElementById('time-hours').value) || 0;
+			var minutes = parseInt(document.getElementById('time-minutes').value) || 0;
+			var seconds = parseInt(document.getElementById('time-seconds').value) || 0;
+			var email = document.getElementById('email').value;
+			var category = document.getElementById('main-category').value;
+			var countdownElement = document.getElementById('countdown');
+		
+			// Convert all time to seconds
+			var countdownTime = (days * 86400) + (hours * 3600) + (minutes * 60) + seconds; 
+		
+			var countdownInterval = setInterval(function() {
+				var displayDays = Math.floor(countdownTime / 86400);
+				var displayHours = Math.floor((countdownTime % 86400) / 3600);
+				var displayMinutes = Math.floor((countdownTime % 3600) / 60);
+				var displaySeconds = countdownTime % 60;
+		
+				countdownElement.textContent = displayDays + "j " + displayHours + "h " + displayMinutes + "m " + displaySeconds + "s";
+		
+				if (countdownTime <= 0) {
+					clearInterval(countdownInterval);
+					countdownElement.textContent = "Le temps est écoulé!";
+					
+					// Send email notification
+					fetch('/send-email', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							email: email,
+							category: category
+						})
+					}).then(response => response.json())
+					  .then(data => {
+						  alert("Le temps est écoulé! Un email a été envoyé à " + email);
+					  }).catch(error => {
+						  console.error('Error:', error);
+						  alert('Une erreur est survenue lors de l\'envoi de l\'email.');
+					  });
+				}
+		
+				countdownTime--;
+			}, 1000);
+		});
+		</script>
+		
+		
+	
+
+		<footer id="footer" class="top-space">
+
+			<div class="footer1">
+				<div class="container">
+					<div class="row">
+						
+						<div class="col-md-3 widget">
+							<h3 class="widget-title">Contact</h3>
+							<div class="widget-body">
+			
+									<a href="mailto:#">ddddddddd@gmail.com</a><br>
+									<br>
+								</p>	
+							</div>
+						</div>
+	
+						<div class="col-md-3 widget">
+							<h3 class="widget-title">Follow me</h3>
+							<div class="widget-body">
+								<p class="follow-me-icons">
+									<a href=""><i class="fab fa-youtube fa-2x"></i></a>
+									<a href=""><i class="fab fa-tiktok fa-2x"></i></a>
+									<a href=""><i class="fab fa-instagram fa-2x"></i></a>
+									<a href=""><i class="fab fa-github fa-2x"></i></a>
+								</p>	
+							</div>
+						</div>
+						
+	
+						<div class="col-md-6 widget">
+							<h3 class="widget-title">Biographie</h3>
+							<div class="widget-body">
+								<p>Aide Clash of Clans est un site dédié aux passionnés du jeu mobile "Clash of Clans", offrant des guides stratégiques et des ressources pour aider les joueurs à améliorer leur expérience de jeu. Que vous soyez un débutant ou un joueur expérimenté, le site fournit les bases nécessaires pour chaque Hôtel de Ville (HDV) ainsi que des compositions d'armée optimales pour chaque niveau.</p>
+							</div>
+						</div>
+	
+					</div> <!-- /row of widgets -->
+				</div>
+			</div>
+	
+			<div class="footer2">
+				<div class="container">
+					<div class="row">
+						
+						<div class="col-md-6 widget">
+							<div class="widget-body">
+								<p class="simplenav">
+									<a href="#">Home</a> | 
+									<a href="village_principal.html">Minuteur Vilage Principal</a> |
+									<a href="village_ouvrier.html">Minuteur Vilage Ouvrier</a> |
+									<a href="sidebar-right.html">Bases</a> |
+									<a href="sidebar-right.html">Compos</a> |
+									<a href="contact.html">Contact</a> |
+									<b><a href="signup.html">Sign up</a></b>
+								</p>
+							</div>
+						</div>
+	
+						<div class="col-md-6 widget">
+							<div class="widget-body">
+								<p class="text-right">
+									Copyright &copy; 2024, Clash Of Max. Designed by <a href="#" rel="designer">Roi_Des_Gueux</a> 
+								</p>
+							</div>
+						</div>
+	
+					</div> <!-- /row of widgets -->
+				</div>
+			</div>
+	
+		</footer>	
+		
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+	<script src="assets/js/minuteur.js"></script>
+
+</body>
+</html>
