@@ -9,8 +9,7 @@
 	<title>Bases - Clash Of Max</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	<link rel="stylesheet" href="assets/css/index.css">
-
+	
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -21,7 +20,11 @@
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
 
-
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
 </head>
 
 <body class="home">
@@ -35,14 +38,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Minuteur <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="village_principal.html">Village Principal</a></li>
-							<li class="active"><a href="village_ouvrier.html">Village Ouvrier</a></li>
-						</ul>
-					</li>
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="about.html">Minuteur</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Aide <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -62,132 +59,108 @@
 
 	<!-- container -->
 	<div class="container">
-		
+
 		<ol class="breadcrumb">
 			<li><a href="index.html">Home</a></li>
-			<li class="active">Bases</li>
+			<li class="active">Minuteur</li>
 		</ol>
 
 		<div class="row">
-			  <!--services header-->
-			  <div class="services-heading wow">
-				<span class="color">Les</span> HDV
-			</div>
-	<!--services header end-->
-	<!--1-->
-			<div class="services-content">
-				   <div class="service-one service wow">
-					   <div class="service-img"><a href="Bases/hdv7.html">
-					   <img src="assets/images/hdv/hdv7.png" alt="service-one">
-					</a> </div>
-					   <div class="service-description">
-						<h2>HDV 7</h2>
-						<p>Voici des bases pour HDV7. Elles seront assez simples, car il s'agit encore d'un HDV relativement bas. Les bases deviendront plus intéressantes à partir de l'HDV9.</p>
+			<!-- Main content -->
+			<article class="col-sm-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Minuteur avec Alerte Email</h1>
+				</header>
+				
+				<!-- Timer and Category Selection Form -->
+				<form id="timer-form">
+					<div class="form-group">
+						<label for="category">Choisissez une catégorie:</label>
+						<div id="category-selection" class="d-flex">
+							<label class="category-option">
+								<input type="radio" name="category" value="HDV 1" required>
+								<img src="assets/images/hdv1.png" alt="HDV 1" class="img-thumbnail" width="50">
+							</label>
+							<label class="category-option">
+								<input type="radio" name="category" value="HDV 2" required>
+								<img src="assets/images/hdv2.png" alt="HDV 2" class="img-thumbnail" width="50">
+							</label>
+							<label class="category-option">
+								<input type="radio" name="category" value="HDV 3" required>
+								<img src="assets/images/hdv3.png" alt="HDV 3" class="img-thumbnail" width="50">
+							</label>
+							<!-- Ajoutez plus de catégories ici avec des images correspondantes -->
+						</div>
 					</div>
-				   </div>
-				   <div class="service-two service wow">
-					   <div class="service-img"><a href="Bases/hdv8.html">
-					   <img src="assets/images/hdv/hdv8.png" alt="service-two">
-					</a> </div>
-					   <div class="service-description">
-						<h2>HDV 8</h2>
-						<p>Voici des bases pour HDV8. Elles seront assez simples, car il s'agit encore d'un HDV relativement bas. Il y aura juste un peu plus de défense que pour l'HDV7, mais elles resteront malheureusement aussi faciles à piller. Les bases deviendront plus intéressantes à partir de l'HDV9.</p>
-					   </div>
-				   </div>
-				   <div class="service-three service wow">
-					<div class="service-img"><a href="Bases/hdv8.html">
-					   <img src="assets/images/hdv/hdv9.png" alt="service-three">
-					</a>	</div>
-					<div class="service-description">
-						<h2>HDV 9</h2>
-						<p>Voici des bases pour HDV9. Avec l'ajout de certaines défenses, du renforcement des structures et de nouvelles troupes, les bases HDV9 deviennent plus intéressantes à défendre. Voici quelques exemples de bases."</p>
-					</div>
-				</div>
-			</div>
-			<!--1-->
-			<!--1-->
-			<div class="services-content">
-				<div class="service-one service wow">
-					<div class="service-img">
-					<img src="assets/images/hdv/hdv10.png" alt="service-one">
-					</div>
-					<div class="service-description">
-					 <h2>HDV 10</h2>
-					 <p></p>
-					</div>
-				</div>
-				<div class="service-two service wow">
-					<div class="service-img">
-					<img src="assets/images/hdv/hdv11.png" alt="service-two">
-					</div>
-					<div class="service-description">
-					 <h2>HDV 11</h2>
-					 <p></p>
-					</div>
-				</div>
-				<div class="service-three service wow">
-				 <div class="service-img">
-					<img src="assets/images/hdv/hdv12.png" alt="service-three">
-				 </div>
-				 <div class="service-description">
-					 <h2>HDV 12</h2>
-					 <p></p>
-				 </div>
-			 </div>
-		 </div>
-		 <!--1-->
-		 <!--1-->
-		 <div class="services-content">
-			<div class="service-one service wow">
-				<div class="service-img">
-				<img src="assets/images/hdv/hdv13.png" alt="service-one">
-				</div>
-				<div class="service-description">
-				 <h2>HDV 13</h2>
-				 <p></p>
-				</div>
-			</div>
-			<div class="service-two service wow">
-				<div class="service-img">
-				<img src="assets/images/hdv/hdv14.png" alt="service-two">
-				</div>
-				<div class="service-description">
-				 <h2>HDV 14</h2>
-				 <p></p>
-				</div>
-			</div>
-			<div class="service-three service wow">
-			 <div class="service-img">
-				<img src="assets/images/hdv/hdv15.png" alt="service-three">
-			 </div>
-			 <div class="service-description">
-				 <h2>HDV 15</h2>
-				 <p></p>
-			 </div>
-		 </div>
-	 </div>
-	 <!--1-->
-	 <!--1-->
-	 <div class="services-content">
-		<div class="service-one service wow">
-			<div class="service-img">
-			<img src="assets/images/hdv/hdv16.png" alt="service-one">
-			</div>
-			<div class="service-description">
-			 <h2>HDV 16</h2>
-			 <p></p>
-			</div>
-		</div>
 		
- <!--1-->
-	</div>
-	<!--services content end-->
-
-			
-			<!-- /Article -->
-
+					<div class="form-group">
+						<label for="time-hours">Durée du minuteur:</label>
+						<div class="d-flex">
+							<input type="number" class="form-control mr-2" id="time-hours" placeholder="Heures" min="0" max="23" required>
+							<input type="number" class="form-control mr-2" id="time-minutes" placeholder="Minutes" min="0" max="59" required>
+							<input type="number" class="form-control" id="time-seconds" placeholder="Secondes" min="0" max="59" required>
+						</div>
+					</div>
+		
+					<div class="form-group">
+						<label for="email">Adresse Email:</label>
+						<input type="email" class="form-control" id="email" placeholder="Votre email" required>
+					</div>
+		
+					<button type="submit" class="btn btn-primary">Démarrer le minuteur</button>
+				</form>
+		
+				<!-- Display Timer Countdown -->
+				<div id="countdown" style="margin-top: 20px; font-size: 24px;"></div>
+			</article>
+			<!-- /Main content -->
+		
+			<!-- Sidebar -->
+			<aside class="col-sm-4 sidebar sidebar-right">
+				<div class="widget">
+					<h4>Comment ça marche?</h4>
+					<p>Sélectionnez une catégorie en cliquant sur une image, définissez un minuteur (heures, minutes, secondes), et recevez un email une fois que le temps est écoulé pour vous rappeler de passer à l'action!</p>
+				</div>
+			</aside>
+			<!-- /Sidebar -->
 		</div>
-	</div>	<!-- /container -->
+		</div> <!-- /container -->
+		
+		<!-- JavaScript to Handle Timer Logic -->
+		<script>
+			document.getElementById('timer-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+		
+				var hours = parseInt(document.getElementById('time-hours').value) || 0;
+				var minutes = parseInt(document.getElementById('time-minutes').value) || 0;
+				var seconds = parseInt(document.getElementById('time-seconds').value) || 0;
+				var email = document.getElementById('email').value;
+				var countdownElement = document.getElementById('countdown');
+		
+				var countdownTime = (hours * 3600) + (minutes * 60) + seconds; // Convert total time to seconds
+		
+				var countdownInterval = setInterval(function() {
+					var displayHours = Math.floor(countdownTime / 3600);
+					var displayMinutes = Math.floor((countdownTime % 3600) / 60);
+					var displaySeconds = countdownTime % 60;
+		
+					countdownElement.textContent = displayHours + "h " + displayMinutes + "m " + displaySeconds + "s";
+		
+					if (countdownTime <= 0) {
+						clearInterval(countdownInterval);
+						countdownElement.textContent = "Le temps est écoulé!";
+						
+						// Send email notification (this part requires server-side processing)
+						alert("Le temps est écoulé! Un email a été envoyé à " + email);
+						
+						// Code to send the email should be implemented server-side
+					}
+		
+					countdownTime--;
+				}, 1000);
+			});
+		</script>
+		
 	
 
 	<footer id="footer" class="top-space">
@@ -238,8 +211,7 @@
 						<div class="widget-body">
 							<p class="simplenav">
 								<a href="#">Home</a> | 
-								<a href="village_principal.html">Minuteur Vilage Principal</a> |
-								<a href="village_ouvrier.html">Minuteur Vilage Ouvrier</a> |
+								<a href="about.html">Minuteur</a> |
 								<a href="sidebar-right.html">Bases</a> |
 								<a href="sidebar-right.html">Compos</a> |
 								<a href="contact.html">Contact</a> |
@@ -261,6 +233,7 @@
 		</div>
 
 	</footer>	
+		
 		
 
 
